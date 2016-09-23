@@ -1,0 +1,158 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  background:#efefef;
+  margin-top:30px;
+}
+
+.nav-forward {
+	letter-spacing:5px;
+	font-weight:600;
+	font-size:18px;
+	padding:15px;
+}
+
+.nav-forward span {
+	 font-size:15px;color:#fff;font-weight:normal;
+}
+
+.nav-back span {
+	font-size:15px;color:#aaa;font-weight:normal;
+}
+
+
+
+.sidebar {
+	margin-top:0px;
+}
+
+
+.logo {
+	margin:25px auto 40px auto;
+	text-align:center;
+}
+
+.logo h1 {
+	font-weight:700;
+	font-size:70px;
+	text-transform:uppercase;
+	letter-spacing:8px;
+	line-height:40px;
+	padding-top:0;
+	margin-top:0;
+	color:#666;
+}
+
+.logo small {
+	letter-spacing:7px;
+	font-weight:300;
+	font-size:28px;
+	color:#999;
+}
+
+.well {
+	font-size:12px;
+	margin-top:10px;
+}
+
+.well strong {
+	font-weight:600;
+}
+
+#pageURL {
+	width:99%;
+	font-size:14px;
+	padding:6px 10px;
+	margin-bottom:10px;
+	font-weight:400;
+	background:#fefefe;
+	display:none;
+}
+
+#mainFrame {
+	width:99%;
+	background:#fff;
+	height: calc(100vh - 60px);
+	padding:0;
+	border:1px solid #ccc;
+	max-width:99%;
+}
+
+.btn {
+    padding: 14px 24px;
+    border: 1px solid #eee;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.btn-sm {
+    padding: 10px 21px;
+    border: 1px solid #eee;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.btn:focus, .btn:active:focus, .btn.active:focus {
+    outline: 0 none;
+}
+
+.btn-primary {
+    background: #0099cc;
+    color: #ffffff;
+}
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
+    background: #33a6cc;
+    border:1px solid #ccc;
+}
+.btn-primary:active, .btn-primary.active {
+    background: #007299;
+    box-shadow: none;
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (max-width: 768px) {
+	.btn-alt {
+		width: 100%; display:block;
+	}
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (max-width: 1199px) {  
+
+  .btn-alt {
+		width: 100%; display:block;
+	}
+	.main-div {
+		margin-top:30px;
+	}
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) { 
+  #odat-boxes .img-box {
+    height:240px;
+  }
+  #odat-boxes .img-box img {
+    max-width:80%;
+  }
+}
+
+.btn-nav-forward {
+	padding:4px 20px; 
+}
+.btn-nav-forward span {
+	color:#fff;
+}
+
+.btn-nav-back {
+	padding: 4px 15px;
+	font-weight:600;
+	font-size:18px;
+}
+
+
+
+

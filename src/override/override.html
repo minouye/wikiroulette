@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>New Tab - WikiRoulette</title>
+	<link rel="stylesheet" href="/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/css/main.css">
+
+	<script type="text/javascript" src="/js/jquery.min.js"></script>
+	<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/js/clipboard.min.js"></script>
+	<script type="text/javascript" src="/js/mousetrap.min.js"></script>
+	<script type="text/javascript" src="main.js"></script>
+
+	<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-7692209-21', 'auto');
+	ga('send', 'pageview');
+
+	</script>
+</head>
+<body>
+
+
+  <!-- Fixed navbar -->
+  <nav class="navbar navbar-default navbar-fixed-top visible-xs" style="display:none;">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#"><strong>WIKI</strong><span style="font-weight:300">Roulette</span></a>
+        <button type="button" class="navbar-toggle collapsed nav-forward btn-primary btn-nav-forward">
+					<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        </button>
+        <button type="button" class="navbar-toggle collapsed nav-back btn-nav-back">
+					<span class="glyphicon glyphicon-chevron-left" aria-hidden="true" disabled="disabled"></span>
+     
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+        
+  
+           <ul class="nav navbar-nav navbar-right">
+            <li><a href="about.html">About</a></li>
+
+
+
+          </ul>
+        </div><!--/.navbar-collapse -->
+      </div>
+    </div>
+  </nav>
+
+
+  <div class="container">
+  	<div class="row">  		
+  		<div class="col-md-9 col-sm-9 col-xs-12 main-div">
+  			<input id="pageURL" type="text" class="form-control" value="" />
+  			<iframe src="" id="mainFrame" frameborder="0" /></iframe>
+ 			</div>
+ 			<div class="col-xs-3 visible-sm visible-md visible-lg sidebar">
+ 				<div class="logo"><h1>Wiki<br/><small>Roulette</small></h1></div>
+ 				<button class="btn btn-block btn-primary nav-forward">
+ 					NEXT <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+ 				</button>
+ 				<button class="btn btn-block btn-default btn-sm nav-back" disabled="disabled">
+ 					PREVIOUS
+ 				</button><hr/>
+ 				<a href="" id="newTab" target="_blank" class="btn btn-sm btn-block btn-default btn-alt">View on Wikipedia</a>
+ 				<button id="copyURL" class="btn btn-sm btn-default btn-alt" style="display:none;" data-toggle="tooltip" title="URL copied to clipboard" data-placement="bottom" data-trigger="click" data-delay='{"show":"0", "hide":"500"}'>Copy URL</button>
+ 				
+ 				<div class="well">
+ 					<p>
+ 					<a href="http://wikiroulette.co/about.html">About WikiRoulette</a></p>
+ 					<p>Use the <code>left</code> and <code>right</code> arrows to move forward and back</p>	
+ 					<p>Made by <a href="http://twitter.com/minouye">@minouye</a>
+ 				</div>
+ 			</div>
+ 		</div>
+ 	</div>
+</body>
+</html>
