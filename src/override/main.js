@@ -42,6 +42,7 @@ $( document ).ready(function() {
 
 function initialize(_callback) {
 	console.log("Initializing...");
+	setHistory();
 	loadMorePages();
 }
 
@@ -62,7 +63,7 @@ function navigate(shift) {
 			loadMorePages();
 		}
 		setURL(pos);
-		updateURL(pages[pos]);
+		//updateURL(pages[pos]);
 	}
 }
 
@@ -84,10 +85,53 @@ function loadMorePages() {
 	});
 }
 
+function setHistory() {
+	chrome.storage.local.get(['history'], function(items) {
+    var pastPages = items['history'];
+    if (pastPages) {
+    	pastPages.forEach(function(obj) {
+    		$("#history").append('<li><a href="https://en.wikipedia.org/wiki/' + obj + '" target="_blank">' + obj.replace(/_/g," ") + '</a></li>');
+    	});
+    }
+	});
+}
+
 function setURL(pos) {
-	$('#mainFrame').attr('src',"https://en.wikipedia.org/wiki/" + pages[pos]);
-	$('#pageURL').attr('value',"https://en.wikipedia.org/wiki/" + pages[pos]);
-	$('#newTab').attr('href',"https://en.wikipedia.org/wiki/" + pages[pos]);
+	var newURL = "https://en.wikipedia.org/wiki/" + pages[pos]
+	$('#mainFrame').attr('src', newURL);
+	$('#pageURL').attr('value', newURL);
+	$('#newTab').attr('href', newURL);
+
+	chrome.storage.local.get(['history'], function(items) {
+		var pastPages = items['history'];
+
+		// If history isn't empty
+    if (pastPages) {
+
+    	// If going back/forward, check to see if page is in history
+    	if (jQuery.inArray(pages[pos], pastPages) == -1) {
+
+    		// Limit history to 10 pages
+    		if (pastPages.length == 10) {
+    			pastPages.pop();
+    		}
+
+    		// Add current page to history and write to page
+    		pastPages.unshift(pages[pos]);
+    		$("#history").prepend('<li><a href="' + newURL + '" target="_blank">' + pages[pos].replace(/_/g," ") + '</a></li>');
+				$('#history li:gt(10)').remove();
+    	}
+    }
+    else {
+    	pastPages = [pages[pos]];
+    	$("#history").prepend('<li><a href="' + newURL + '">' + pages[pos].replace(/_/g," ") + '</a></li>');
+    }
+
+    chrome.storage.local.set({'history': pastPages});
+
+  });
+
+
 }
 
 

@@ -1,6 +1,6 @@
 {
   "name": "WikiRoulette",
-  "version": "0.0.1",
+  "version": "1.0.1",
   "manifest_version": 2,
   "description": "Randomly browse Wikipedia pages from the 5.2 million English Wikipedia entries, in each new tab.",
   "homepage_url": "http://wikiroulette.co",
@@ -18,7 +18,8 @@
     "newtab": "src/override/override.html"
   },
   "permissions": [
-    "https://en.wikipedia.org/*"
+    "https://en.wikipedia.org/*",
+    "storage"
   ],
   "content_security_policy":"script-src 'self' https://en.wikipedia.org; object-src 'self'"
 }

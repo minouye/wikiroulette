@@ -21,12 +21,9 @@ body {
 	font-size:15px;color:#aaa;font-weight:normal;
 }
 
-
-
 .sidebar {
 	margin-top:0px;
 }
-
 
 .logo {
 	margin:25px auto 40px auto;
@@ -151,6 +148,19 @@ body {
 	padding: 4px 15px;
 	font-weight:600;
 	font-size:18px;
+}
+
+#recentlyViewed {
+	overflow: auto;
+	max-height: 118px;
+}
+
+#history {
+	padding-left: 17px; 
+}
+
+#history li:first-child {
+	font-weight:bold;
 }
 
 
