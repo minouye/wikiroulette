@@ -1,7 +1,7 @@
 {
   "name": "WikiRoulette",
-  "version": "1.0.1",
-  "manifest_version": 2,
+  "version": "1.1.0",
+  "manifest_version": 3,
   "description": "Randomly browse Wikipedia pages from the 5.2 million English Wikipedia entries, in each new tab.",
   "homepage_url": "http://wikiroulette.co",
   "icons": {
@@ -11,15 +11,19 @@
   },
   "default_locale": "en",
   "background": {
-    "page": "src/bg/background.html",
-    "persistent": false
+    "service_worker": "src/bg/background.js",
+    "type": "module"
   },
   "chrome_url_overrides": {
     "newtab": "src/override/override.html"
   },
   "permissions": [
-    "https://en.wikipedia.org/*",
     "storage"
   ],
-  "content_security_policy":"script-src 'self' https://en.wikipedia.org; object-src 'self'"
+  "host_permissions": [
+    "https://en.wikipedia.org/*"
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  }
 }

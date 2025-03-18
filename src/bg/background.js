@@ -6,8 +6,19 @@
 
 
 //example of using a message handler from the inject scripts
-chrome.extension.onMessage.addListener(
+chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
-  	chrome.pageAction.show(sender.tab.id);
+    if (sender.tab) {
+      chrome.action.show(sender.tab.id);
+    }
     sendResponse();
   });
+
+// Service worker needs to be kept alive
+self.addEventListener('install', (event) => {
+  self.skipWaiting();
+});
+
+self.addEventListener('activate', (event) => {
+  event.waitUntil(clients.claim());
+});

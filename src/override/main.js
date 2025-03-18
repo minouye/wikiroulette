@@ -1,4 +1,3 @@
-
 var pos = 0;
 var pages = [];
 
@@ -70,8 +69,8 @@ function navigate(shift) {
 function loadMorePages() {
 	console.log("Loading more random pages...");
 	$.ajax({
-		url: "https://en.wikipedia.org/w/api.php?action=query&list=random&rnnamespace=0&rnlimit=10&format=json",
-		dataType: "jsonp",
+		url: "https://en.wikipedia.org/w/api.php?action=query&list=random&rnnamespace=0&rnlimit=10&format=json&origin=*",
+		dataType: "json",
 
     // Work with the response
     success: function( response ) {
